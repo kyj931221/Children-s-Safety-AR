@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class ObjectController1 : MonoBehaviour
 {
-    private Rigidbody CarRb;
+    private Rigidbody ChRb;
     public int MoveForce = 0;
-    public AudioClip CarAudio;
-    private AudioSource CarAudioSource;
+    public AudioClip ChAudio;
+    private AudioSource ChAudioSource;
+    private Animator animator;
     private void Start()
     {
-        CarRb = GetComponent<Rigidbody>();
-        CarAudioSource = GetComponent<AudioSource>();
+        ChRb = GetComponent<Rigidbody>();
+        ChAudioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -21,18 +23,19 @@ public class ObjectController1 : MonoBehaviour
 
     private void Move()
     {
-        CarRb.velocity = Vector3.zero;
-        CarRb.AddForce(new Vector3(MoveForce, 0, 0));
-        CarAudioSource.clip = CarAudio;
-        CarAudioSource.Play();
+        ChRb.velocity = Vector3.zero;
+        ChRb.AddForce(new Vector3(0, 0, MoveForce));
+       // ChAudioSource.clip = ChAudio;
+       // ChAudioSource.Play();
     }
 
 
     private void Stop()
     {
-        CarRb.velocity = Vector3.zero;
+        ChRb.velocity = Vector3.zero;
         MoveForce = 0;
-        CarAudioSource.Stop();
+        animator.SetTrigger("Completion");
+        // ChAudioSource.Stop();
 
     }
 

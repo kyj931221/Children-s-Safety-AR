@@ -32,17 +32,29 @@ public class ObjectController : MonoBehaviour
         CarAudioSource.Play();
     }
 
-
-    private void Stop()
+    private void CarFalse()
     {
         CarMr.gameObject.SetActive(false);
+        CarAudioSource.Stop();
 
+    }
+    private void Stop()
+    {
+        CarRb.velocity = Vector3.zero;
+        MoveForce = 0;
+        CarAudioSource.Stop();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("CarFalse");
+        if(other.tag == "FalseZone")
+        {
+            Debug.Log("False False");
+            CarFalse();
+        }
         Debug.Log("Stop");
-        if(other.tag == "StopZone")
+        if (other.tag == "StopZone")
         {
             Debug.Log("Stop Stop");
             Stop();
