@@ -8,8 +8,8 @@ public class ObjectController : MonoBehaviour
 {
     private Rigidbody CarRb;
     public int MoveForce = 0;
-    public AudioClip CarAudio;
-    private AudioSource CarAudioSource;
+    //public AudioClip CarAudio;
+    public AudioSource CarAudioSource;
     private MeshRenderer CarMr;
 
     private void Start()
@@ -28,7 +28,7 @@ public class ObjectController : MonoBehaviour
     {
         CarRb.velocity = Vector3.zero;
         CarRb.AddForce(new Vector3(MoveForce, 0, 0));
-        CarAudioSource.clip = CarAudio;
+        //CarAudioSource.clip = CarAudio;
         CarAudioSource.Play();
     }
 

@@ -6,13 +6,13 @@ public class ObjectController1 : MonoBehaviour
 {
     private Rigidbody ChRb;
     public int MoveForce = 0;
-    public AudioClip ChAudio;
-    private AudioSource ChAudioSource;
+    //public AudioClip ChAudio;
+    //private AudioSource ChAudioSource;
     private Animator animator;
     private void Start()
     {
         ChRb = GetComponent<Rigidbody>();
-        ChAudioSource = GetComponent<AudioSource>();
+        //ChAudioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -25,8 +25,8 @@ public class ObjectController1 : MonoBehaviour
     {
         ChRb.velocity = Vector3.zero;
         ChRb.AddForce(new Vector3(0, 0, MoveForce));
-       // ChAudioSource.clip = ChAudio;
-       // ChAudioSource.Play();
+        //ChAudioSource.clip = ChAudio;
+        //ChAudioSource.Play();
     }
 
 
@@ -35,7 +35,7 @@ public class ObjectController1 : MonoBehaviour
         ChRb.velocity = Vector3.zero;
         MoveForce = 0;
         animator.SetTrigger("Completion");
-        // ChAudioSource.Stop();
+        //ChAudioSource.Stop();
 
     }
 

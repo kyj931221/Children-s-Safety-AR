@@ -34,6 +34,7 @@ public class Track : MonoBehaviour
         {
             if (t.trackingState == TrackingState.Tracking)
             {
+                o.transform.position = t.transform.position;
                 o.transform.rotation = t.transform.rotation;
                 o.SetActive(true);
 
