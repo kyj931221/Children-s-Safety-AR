@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectController1 : MonoBehaviour
 {
     private Rigidbody ChRb;
-    public int MoveForce = 0;
+    public float MoveForce = 0;
     //public AudioClip ChAudio;
     //private AudioSource ChAudioSource;
     private Animator animator;
